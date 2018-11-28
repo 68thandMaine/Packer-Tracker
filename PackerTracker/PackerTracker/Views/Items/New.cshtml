@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>List of Items to pack</h1>
+<form action="/items" method="post">
+    <label for="item">Add a new item to pack</label>
+    <input id="item" name="item" type="text"><br>
+
+     <label for="price">How much does the item cost</label>
+    <input id="price" name="price" type="number"><br>
+
+     <label for="weight">How much does the item weigh in lbs</label>
+    <input id="weight" name="weight" type="number"><br>
+
+     <label for="purchase">Do you need to purchase this item</label>
+    <input id="purchase" name="purchase" type="checkbox"><br>
+    
+    <button type="submit">Submit</button>
+   </form>
