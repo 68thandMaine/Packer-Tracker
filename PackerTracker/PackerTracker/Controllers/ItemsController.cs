@@ -30,5 +30,12 @@ namespace PackerTracker.Controllers
             PackObject myPackObject = new PackObject(item, price, weight, purchase);
             return RedirectToAction("Index");
         }
+
+        [HttpGet("/items/{id}")]
+        public ActionResult Show(int id)
+        {
+            PackObject item = PackObject.Find(id);
+            return View();
+        }
     }
 }

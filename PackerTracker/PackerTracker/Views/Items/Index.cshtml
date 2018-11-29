@@ -1,7 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using System;
+@using PackerTracker.Models;
+
+<h1>Inventory:</h1>
+<ul>
+
+@if (Model.Count == 0)
+{
+  <p>You have no items in your inventory!</p>
 }
 
-<h1>This is the Items Index</h1>
+@if (Model.Count != 0)
+{
+  @foreach (PackObject item in Model)
+  {
+      <li><a href="/items/@item.GetId()">@item.GetProduct()</a></li>
+  }
+}
+
+</ul>
+<a href="/items/new">Add a new item.</a>
+
+<form action="/items/delete" method="post">
+    <button type="submit" name="button">Clear All Items</button>
+</form>
