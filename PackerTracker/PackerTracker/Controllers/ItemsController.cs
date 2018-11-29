@@ -35,7 +35,7 @@ namespace PackerTracker.Controllers
         public ActionResult Show(int id)
         {
             PackObject item = PackObject.Find(id);
-            return View();
+            return View(item);
         }
     }
 }
